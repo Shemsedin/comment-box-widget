@@ -55,9 +55,9 @@ Just to briefly explain some of the directories above. As can be seen on the abo
 
 ## Running the App
 
-While you are in the root directory on the terminal do `npm start` when you do that it will start the application and will give you this link `http://localhost:3000` which you can navigate to, and you will see the app running.
+While you are in the root directory on the terminal do `npm start` when you do that it will start the application and will give you this link `http://localhost:3000` which you can navigate to and you will see the app running.
 
-## Using
+## Usage
 
 Once you run the app you will have a comment box where you can add comment and if you want to mention/refer a user type **@** and start typing you will then have a suggestion i.e. list of users that you can choose from to insert in the comment field.
 
