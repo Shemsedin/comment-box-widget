@@ -63,6 +63,6 @@ Once you run the app you will have a comment box where you can add comment and i
 
 ## Automation Testing
 
-For automation testing we are using [Jest](https://jestjs.io/) which ships with React an [Enzyme](https://enzymejs.github.io/enzyme/).
+For automation testing we are using [Jest](https://jestjs.io/) which ships with React and [Enzyme](https://enzymejs.github.io/enzyme/).
 
 Navigate to the root directory of this app, if not already int there. Then do `npm test` then you will see int the terminal that it will give you a few options, once of which is `Press a to run all tests` which is what you will need to do i.e. press `a` and then you will see all tests running and passing.
