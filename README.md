@@ -8,7 +8,8 @@ Once the above is done you are ready to run the application locally.
 
 ## Directory Structure
 The directory structure is as below.
- 
+
+```bash
 .
 ├── README.md
 ├── package-lock.json
@@ -43,6 +44,7 @@ The directory structure is as below.
         ├── enzyme.js
         ├── insert-mention.js
         └── sort-suggestions.js
+```
 
 Just to briefly explain some of the directories above. As can be seen on the above structure
  
