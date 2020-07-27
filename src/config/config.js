@@ -12,6 +12,7 @@ config.KEY_CODES = {
   KEYDOWN: 40,
   KEYUP: 38,
   TRIGGER_MENTION: 50,
+  ESCAPE: 27,
 };
 
 module.exports = config;

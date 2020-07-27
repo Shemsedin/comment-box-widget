@@ -19,6 +19,7 @@ class CommentWidget extends Component {
   constructor(props) {
     super(props);
 
+    this.listRef = React.createRef();
     this.state = {
       activeSuggestion: 0,
       filteredSuggestions: [],
@@ -77,7 +78,7 @@ class CommentWidget extends Component {
     const newText = insertMention(
       textAreaValue,
       startPosition,
-      e.currentTarget.innerText,
+      e.currentTarget.textContent,
       e.currentTarget.innerText.length
     );
 
@@ -105,11 +106,15 @@ class CommentWidget extends Component {
           return;
         }
         this.setState({ activeSuggestion: activeSuggestion - 1 });
+        // This can be done lot better
+        this.listRef.current.parentElement.scrollBy(0, -52);
       } else if (e.keyCode === Config.KEY_CODES.KEYDOWN) {
         if (activeSuggestion - 1 === filteredSuggestions.length) {
           return;
         }
         this.setState({ activeSuggestion: activeSuggestion + 1 });
+        // This also can be done lot better
+        this.listRef.current.parentElement.scrollBy(0, 52);
       } else if (e.keyCode === Config.KEY_CODES.ENTER) {
         e.preventDefault();
 
@@ -129,6 +134,16 @@ class CommentWidget extends Component {
           startPosition: null,
           textAreaValue: newText,
           isTriggered: false,
+        });
+        this.endTriggerHandler();
+      } else if (e.keyCode === Config.KEY_CODES.ESCAPE) {
+        this.setState({
+          activeSuggestion: 0,
+          filteredSuggestions: [],
+          showSuggestions: false,
+          top: null,
+          left: null,
+          startPosition: null,
         });
         this.endTriggerHandler();
       }
@@ -151,6 +166,7 @@ class CommentWidget extends Component {
       handleTrigger,
       onClick,
       onKeyDown,
+      listRef,
       state: { filteredSuggestions, showSuggestions, userInput },
     } = this;
 
@@ -159,7 +175,7 @@ class CommentWidget extends Component {
     if (showSuggestions && userInput) {
       if (filteredSuggestions.length) {
         suggestionsListComponent = (
-          <SuggestionList {...this.state} onClick={onClick} />
+          <SuggestionList {...this.state} onClick={onClick} ref={listRef} />
         );
       }
     }

@@ -17,7 +17,7 @@ const SuggestionsUl = styled.ul`
   border-top-width: 0;
   list-style: none;
   margin-top: 0;
-  max-height: 425px;
+  height: 415px;
   overflow-y: auto;
   padding-left: 0;
   width: calc(300px + 1rem);
@@ -37,7 +37,7 @@ const SuggestionsUl = styled.ul`
   }
 `;
 
-const SuggestionList = (props) => {
+const SuggestionList = React.forwardRef((props, ref) => {
   return (
     <SuggestionsUl top={props.top} left={props.left}>
       {props.filteredSuggestions.map((user, index) => {
@@ -55,6 +55,7 @@ const SuggestionList = (props) => {
             className={className}
             key={user.username.toString()}
             onClick={props.onClick}
+            ref={ref}
           >
             <Avatar src={user.avatar_url} />
             <UserName>{user.name}</UserName>
@@ -63,6 +64,6 @@ const SuggestionList = (props) => {
       })}
     </SuggestionsUl>
   );
-};
+});
 
 export default SuggestionList;
