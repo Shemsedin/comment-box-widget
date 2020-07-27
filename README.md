@@ -1,6 +1,8 @@
 # Comment Box Widget
 
-This is React application that provide the solution to auto-selecting users in the comment field.
+This is a React application that assists a user when they want to reference another user in the comment field by providing a list of suggestions to choose from and autocomplete the name of the user that you want to reference in the comment.
+
+To start this process a user would type the character to trigger the mention **(currently @ but this can be easily changed)** and start typing the user's name.
 
 ## Installation
 
@@ -49,25 +51,27 @@ The directory structure is as below.
         └── sort-suggestions.js
 ```
 
-Just to briefly explain some of the directories above. As can be seen on the above structure
+Just to briefly explain the directories above and what they have.
 
 1.  Under `src` directory is all the application's code
-2.  Components `scr/components` directory is where all components are, within this directory `__tests__` directory is where all the tests code for the components
-3.  `config` is where various settings for the application
-4.  `util` is where all helper functions are
+2.  Components `scr/components` directory is where all components are, within this directory, the `__tests__` directory is where all the tests code for the components are
+3.  `config` has various settings for this application
+4.  `util` has all helper functions
+
+As it can be seen the application is made of small blocks of functionalities hence making it easy to integrate into other applications.
 
 ## Running the App
 
-While you are in the root directory on the terminal do `npm start` when you do that it will start the application and will give you this link `http://localhost:3000` which you can navigate to and you will see the app running.
+While you are in the root directory on the terminal do `npm start` when you do that it will start the application and will give you this link `http://localhost:3000` which you can then navigate to, and you will see the app running.
 
 ## Usage
 
-Once you run the app you will have a comment box where you can add comment and if you want to mention/refer a user type **@** and start typing you will then have a suggestion i.e. list of users that you can choose from to insert in the comment field.
+Once you run the app you will have a comment box where you can add a comment and if you want to mention/refer a user type **@** and start typing the name of the user that you want to refer to, you will then see a list of suggestions i.e. list of users that you can choose from to insert into the comment field.
 
-You can cancel the action by pressing escape or backspace.
+The action can be canceled by pressing escape or backspace in the keyboard.
 
 ## Automation Testing
 
-For automation testing we are using [Jest](https://jestjs.io/) which ships with React and [Enzyme](https://enzymejs.github.io/enzyme/).
+For automation testing I have used [Jest](https://jestjs.io/) which ships with React and [Enzyme](https://enzymejs.github.io/enzyme/).
 
-Navigate to the root directory of this app, if not already int there. Then do `npm test` then you will see int the terminal that it will give you a few options, once of which is `Press a to run all tests` which is what you will need to do i.e. press `a` and then you will see all tests running and passing.
+To test use terminal to navigate to the root directory of this app, if not already in there. Then do `npm test` then you will see in the terminal it will give you a few options, one of which is `Press a to run all tests` which is what you will need to do i.e. press `a` and then you will see all tests running and passing.
